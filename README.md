@@ -1,5 +1,5 @@
 # emoteHDizer
-This is a Python 3 script to make make HD versions of a Twitch Streamer's emotes
+This is a Python 3.7+ script to make make HD versions of a Twitch Streamer's emotes
 
 main.py
 ================================================================================
