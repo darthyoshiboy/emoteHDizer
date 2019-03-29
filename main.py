@@ -19,7 +19,7 @@ for image in sjp['emoticons']:
     img_url = f"https://static-cdn.jtvnw.net/emoticons/v1/{image['id']}/3.0"
     c_emote_filename = f"{image['regex']}.png"
     c_emote_wpath = Path.joinpath(cwtd).joinpath(c_emote_filename)
-    print("Downloading: ",image['regex'],img_url, "'HD' Image saved to: ", cwd)
+    print(f"Downloading: {image['regex']}:{img_url} Image saved to: {c_emote_wpath}")
     c_emote = requests.get(img_url)
     open(c_emote_wpath, 'wb').write(c_emote.content)
     e_tiles = image_slicer.slice(c_emote_wpath, config.pixel_count)
@@ -37,4 +37,5 @@ for image in sjp['emoticons']:
     for size in (28,56,112):
         save_image = hd_image.resize((size,size))
         c_emote_fpath = Path.joinpath(cwd).joinpath(f"{image['regex']}_hd_{size}.png")
+        print(f"Saved 'HD' emote to {c_emote_fpath}")
         save_image.save(c_emote_fpath, "PNG")
